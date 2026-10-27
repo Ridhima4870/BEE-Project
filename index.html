@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowBasket </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header id="home">
+        <h1><i class="fa-solid fa-spa"></i> GlowBasket</h1>
+        <p>Your beauty and glow essential in one place</p>
+        <a href="#products" class="shop-button">Shop Now</a>
+    </header>
+
+    <nav>
+        <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#products"><i class="fa-solid fa-store"></i> Products</a>
+        <a href="#cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            My Cart (<span id="cart-count">0</span>)
+        </a>
+    </nav>
+
+    <section class="intro">
+        <p class="small-heading">WELCOME TO GLOWBASKET</p>
+        <h2>We make you feel beautiful</h2>
+        <a href="#products" class="text-link">Explore the collection
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </section>
+
+    <section id="products">
+        <p class="small-heading">Shop Here</p>
+
+        <div class="filters">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search"
+                       placeholder="Search products...">
+            </div>
+
+            <select id="category">
+                <option value="All">All Categories</option>
+                <option value="Skincare">Skincare</option>
+                <option value="Makeup">Makeup</option>
+                <option value="Haircare">Haircare</option>
+            </select>
+
+            <select id="sort">
+                <option value="default">Sort By</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="name">Name: A to Z</option>
+            </select>
+
+            <select id="max-price">
+                <option value="5000">All Prices</option>
+                <option value="300">Under ₹300</option>
+                <option value="500">Under ₹500</option>
+                <option value="1000">Under ₹1000</option>
+            </select>
+        </div>
+
+        <div id="product-list" class="products"></div>
+    </section>
+
+    <section id="cart" class="cart-section">
+        <p class="small-heading">YOUR SELECTED FAVOURITES</p>
+        <h2><i class="fa-solid fa-basket-shopping"></i> My Shopping Cart</h2>
+
+        <p id="delivery-message">Add products to start shopping!</p>
+
+        <div class="delivery-bar">
+            <div id="delivery-progress"></div>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <div class="bill">
+            <h3>Order Summary</h3>
+
+            <div class="bill-row">
+                <span>Subtotal</span>
+                <span>₹<span id="subtotal">0.00</span></span>
+            </div>
+
+            <div class="coupon">
+                <input type="text" id="coupon"
+                       placeholder="Enter coupon code">
+                <button type="button" onclick="applyCoupon()">Apply</button>
+            </div>
+
+            <p id="coupon-message"></p>
+
+            <div class="bill-row">
+                <span>Discount</span>
+                <span>- ₹<span id="discount">0.00</span></span>
+            </div>
+
+            <div class="bill-row">
+                <span>Delivery</span>
+                <span>₹<span id="delivery">0.00</span></span>
+            </div>
+
+            <hr>
+
+            <div class="bill-row final-total">
+                <span>Total Amount</span>
+                <span>₹<span id="total">0.00</span></span>
+            </div>
+
+            <button class="checkout-button" onclick="goToCheckout()">
+                Proceed to Checkout
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p class="secure-note">
+                <i class="fa-solid fa-shield-halved"></i>
+                Safe and simple demo checkout
+            </p>
+        </div>
+    </section>
+
+    <section id="checkout">
+        <p class="small-heading">ALMOST YOURS</p>
+        <h2><i class="fa-solid fa-credit-card"></i> Checkout</h2>
+
+        <form id="checkout-form">
+
+            <label for="customer-name">Full Name</label>
+            <input type="text" id="customer-name"
+                   placeholder="Enter your name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email"
+                   placeholder="Enter your email" required>
+
+            <label for="address">Delivery Address</label>
+            <textarea id="address"
+                      placeholder="Enter your full address"
+                      required></textarea>
+
+            <label for="payment">Payment Method</label>
+            <select id="payment">
+                <option value="Cash on Delivery">Cash on Delivery</option>
+                <option value="UPI (Demo)">UPI (Demo)</option>
+                <option value="Card (Demo)">Debit/Credit Card (Demo)</option>
+            </select>
+
+            <button type="submit">
+                <i class="fa-solid fa-lock"></i> Place Order
+            </button>
+
+        </form>
+
+        <div id="order-message"></div>
+    </section>
+
+    <footer>
+        <h3><i class="fa-solid fa-spa"></i> GlowBasket</h3>
+        <p>Your beauty, your glow, your choice.</p>
+
+        <div class="social-icons">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-pinterest"></i>
+        </div>
+
+        <p class="footer-bottom">
+            CE-1 Mini Project | Made with <i class="fa-solid fa-heart"></i>
+        </p>
+    </footer>
+
+    <script src="project.js"></script>
+
+</body>
+</html>
